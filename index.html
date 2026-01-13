@@ -1,209 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Makar Sankranti Sister</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Makar Sankranti Sister!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;600&display=swap');
 
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+        /* --- Basic Reset & Mobile Optimization --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
+        body {
+            background: linear-gradient(135deg, #FF9933, #FFD700, #87CEEB);
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
 
-body{
-    font-family:'Poppins',sans-serif;
-    height:100vh;
-    background:linear-gradient(135deg,#87CEEB,#E0F7FA);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-}
+        /* --- Floating Kites Animation --- */
+        .kite {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 69, 0, 0.8);
+            transform: rotate(45deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
 
-/* 🔊 Music button */
-.music-btn{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#222;
-    color:#fff;
-    border:none;
-    padding:12px 16px;
-    border-radius:50%;
-    cursor:pointer;
-    font-size:18px;
-    z-index:1000;
-}
+        .kite::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 100px;
+            height: 2px;
+            background: white;
+            transform: rotate(-45deg);
+            transform-origin: left;
+        }
 
-/* ☀️ Sun */
-.sun{
-    position:absolute;
-    top:8%;
-    right:10%;
-    width:110px;
-    height:110px;
-    background:radial-gradient(circle,#FFD700,#FF8C00);
-    border-radius:50%;
-    box-shadow:0 0 60px #FFA500;
-    animation:glow 4s infinite alternate;
-}
+        /* Different Kites */
+        .k1 { top: 10%; left: 10%; background: #ff0055; animation: float 6s infinite ease-in-out; }
+        .k2 { top: 20%; right: 15%; width: 50px; height: 50px; background: #6600cc; animation: float 8s infinite ease-in-out reverse; }
+        .k3 { bottom: 15%; left: 20%; width: 60px; height: 60px; background: #009933; animation: float 7s infinite ease-in-out 1s; }
+        .k4 { top: 50%; right: 5%; width: 40px; height: 40px; background: #ffcc00; animation: float 5s infinite ease-in-out 2s; }
 
-/* 🪁 Flying Kites */
-.kite{
-    position:absolute;
-    width:60px;
-    animation:fly 8s linear infinite;
-}
-.k1{left:-10%; top:20%; animation-delay:0s;}
-.k2{left:-20%; top:40%; animation-delay:3s; transform:scale(.8);}
-.k3{left:-15%; top:60%; animation-delay:6s; transform:scale(1.1);}
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(45deg); }
+            50% { transform: translateY(-20px) rotate(50deg); }
+        }
 
-@keyframes fly{
-    from{transform:translateX(0) translateY(0) rotate(0deg);}
-    to{transform:translateX(120vw) translateY(-120px) rotate(12deg);}
-}
+        /* --- Main Card Design --- */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            z-index: 10;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255,255,255,0.8);
+            animation: popUp 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
 
-/* 🌸 Card */
-.card{
-    background:rgba(255,255,255,.25);
-    backdrop-filter:blur(18px);
-    border-radius:24px;
-    padding:70px 35px 45px;
-    width:90%;
-    max-width:520px;
-    text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,.3);
-    animation:popUp 1.2s ease forwards;
-}
+        @keyframes popUp {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
 
-/* 💖 DP */
-.dp{
-    position:absolute;
-    top:-70px;
-    left:50%;
-    transform:translateX(-50%);
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    border:5px solid white;
-    overflow:hidden;
-    box-shadow:0 0 30px rgba(255,80,120,.6);
-}
-.dp img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #d35400;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
 
-/* 🎀 Headings */
-h1{
-    font-family:'Dancing Script',cursive;
-    font-size:3.4rem;
-    background:linear-gradient(to right,#FF512F,#DD2476);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    margin-bottom:8px;
-}
-h2{
-    color:#444;
-    margin-bottom:20px;
-}
+        .sub-header {
+            font-size: 1.1rem;
+            color: #e67e22;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-/* 🌈 MESSAGE COLOR CHANGED */
-.message{
-    font-size:1.12rem;
-    line-height:2;
-    font-weight:600;
-    background:linear-gradient(
-        90deg,
-        #6a11cb,
-        #ff4b8b,
-        #f9d423
-    );
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    text-shadow:0 0 18px rgba(255,100,150,.35);
-    margin-bottom:30px;
-}
+        .message {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            background: #fff8e1;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #f1c40f;
+        }
 
-/* Button */
-.btn{
-    background:#222;
-    color:#fff;
-    border:none;
-    padding:14px 36px;
-    border-radius:30px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.3s;
-}
-.btn:hover{
-    background:linear-gradient(to right,#FF512F,#DD2476);
-    transform:scale(1.07);
-}
+        /* --- Interactive Button --- */
+        .btn {
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            border: none;
+            padding: 12px 30px;
+            color: white;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(221, 36, 118, 0.4);
+            transition: transform 0.2s;
+            font-weight: 600;
+        }
 
-@keyframes glow{
-    from{box-shadow:0 0 25px #FFA500;}
-    to{box-shadow:0 0 70px #FF4500;}
-}
-@keyframes popUp{
-    from{opacity:0;transform:translateY(50px);}
-    to{opacity:1;transform:translateY(0);}
-}
-</style>
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* --- Decor --- */
+        .sun {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #ffd700, transparent);
+            opacity: 0.6;
+            border-radius: 50%;
+        }
+
+    </style>
 </head>
-
 <body>
 
-<!-- 🔊 Soft Flute Music -->
-<audio id="bgMusic" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5b1bfc3ef6.mp3?filename=indian-flute-ambient-110624.mp3" type="audio/mpeg">
-</audio>
+    <div class="kite k1"></div>
+    <div class="kite k2"></div>
+    <div class="kite k3"></div>
+    <div class="kite k4"></div>
 
-<button class="music-btn" onclick="toggleMusic()">🔊</button>
+    <div class="card">
+        <div class="sun"></div>
+        <h1>Happy Makar Sankranti</h1>
+        <div class="sub-header">To My Dearest Sister 💛</div>
+        
+        <div class="message">
+            "Meri pyaari behen!<br><br>
+            Tumhari zindagi hamesha <strong>khushiyon</strong>, <strong>success</strong> aur <strong>sukoon</strong> se bhari rahe.<br><br>
+            Har din tumhari muskaan aur confidence aur bhi zyada chamke.<br><br>
+            Tumhare sapne aasmaan ki patang ki tarah upar udte rahein!<br><br>
+            Stay Safe, Strong & Blessed."
+        </div>
 
-<div class="sun"></div>
-
-<!-- 🪁 Kites -->
-<img src="https://i.imgur.com/YZ6XK6H.png" class="kite k1">
-<img src="https://i.imgur.com/YZ6XK6H.png" class="kite k2">
-<img src="https://i.imgur.com/YZ6XK6H.png" class="kite k3">
-
-<div class="card">
-    <div class="dp">
-        <img src="ankku dii.jpg">
+        <button class="btn" onclick="celebrate()">✨ Send Love ✨</button>
     </div>
 
-    <h1>Happy Makar Sankranti</h1>
-    <h2>To My Dearest Sister 💛</h2>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        function celebrate() {
+            // Play a button click animation
+            const btn = document.querySelector('.btn');
+            btn.innerHTML = "💖 Love You! 💖";
+            
+            // Trigger Confetti (Flower shower effect)
+            var duration = 3000;
+            var end = Date.now() + duration;
 
-    <p class="message">
-        Happy Makar Sankranti meri pyaari behen! <br>
-        Tumhari zindagi hamesha khushiyon, success aur sukoon se bhari rahe, <br>
-        har din tumhari muskaan aur confidence aur bhi zyada chamke, <br>
-        tumhare sapne aasmaan ki patang ki tarah upar udte rahein, <br>
-        aur bhagwan tumhe hamesha safe, strong aur blessed rakhe 
-    </p>
+            (function frame() {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#ff0000', '#ffa500', '#ffff00']
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#ff0000', '#ffa500', '#ffff00']
+                });
 
-    <button class="btn" onclick="this.innerHTML='💖 Sent with Love';this.style.background='#27ae60';">
-        ✨ Send Love ✨
-    </button>
-</div>
-
-<script>
-let music=false;
-const audio=document.getElementById("bgMusic");
-
-function toggleMusic(){
-    if(!music){
-        audio.play();
-        music=true;
-    }else{
-        audio.pause();
-        music=false;
-    }
-}
-</script>
-
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+    </script>
 </body>
 </html>
