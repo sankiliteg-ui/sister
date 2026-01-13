@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Makar Sankranti Sister</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    height:100vh;
+    background:linear-gradient(135deg,#87CEEB,#E0F7FA);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* 🔊 Music button */
+.music-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#222;
+    color:#fff;
+    border:none;
+    padding:12px 16px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+    z-index:1000;
+}
+
+/* ☀️ Sun */
+.sun{
+    position:absolute;
+    top:8%;
+    right:10%;
+    width:110px;
+    height:110px;
+    background:radial-gradient(circle,#FFD700,#FF8C00);
+    border-radius:50%;
+    box-shadow:0 0 60px #FFA500;
+    animation:glow 4s infinite alternate;
+}
+
+/* 🪁 Flying Kites */
+.kite{
+    position:absolute;
+    width:60px;
+    animation:fly 8s linear infinite;
+}
+.k1{left:-10%; top:20%; animation-delay:0s;}
+.k2{left:-20%; top:40%; animation-delay:3s; transform:scale(.8);}
+.k3{left:-15%; top:60%; animation-delay:6s; transform:scale(1.1);}
+
+@keyframes fly{
+    from{transform:translateX(0) translateY(0) rotate(0deg);}
+    to{transform:translateX(120vw) translateY(-120px) rotate(12deg);}
+}
+
+/* 🌸 Card */
+.card{
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(18px);
+    border-radius:24px;
+    padding:70px 35px 45px;
+    width:90%;
+    max-width:520px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+    animation:popUp 1.2s ease forwards;
+}
+
+/* 💖 DP */
+.dp{
+    position:absolute;
+    top:-70px;
+    left:50%;
+    transform:translateX(-50%);
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:5px solid white;
+    overflow:hidden;
+    box-shadow:0 0 30px rgba(255,80,120,.6);
+}
+.dp img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* 🎀 Headings */
+h1{
+    font-family:'Dancing Script',cursive;
+    font-size:3.4rem;
+    background:linear-gradient(to right,#FF512F,#DD2476);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:8px;
+}
+h2{
+    color:#444;
+    margin-bottom:20px;
+}
+
+/* 🌈 MESSAGE COLOR CHANGED */
+.message{
+    font-size:1.12rem;
+    line-height:2;
+    font-weight:600;
+    background:linear-gradient(
+        90deg,
+        #6a11cb,
+        #ff4b8b,
+        #f9d423
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 0 18px rgba(255,100,150,.35);
+    margin-bottom:30px;
+}
+
+/* Button */
+.btn{
+    background:#222;
+    color:#fff;
+    border:none;
+    padding:14px 36px;
+    border-radius:30px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+.btn:hover{
+    background:linear-gradient(to right,#FF512F,#DD2476);
+    transform:scale(1.07);
+}
+
+@keyframes glow{
+    from{box-shadow:0 0 25px #FFA500;}
+    to{box-shadow:0 0 70px #FF4500;}
+}
+@keyframes popUp{
+    from{opacity:0;transform:translateY(50px);}
+    to{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔊 Soft Flute Music -->
+<audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5b1bfc3ef6.mp3?filename=indian-flute-ambient-110624.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🔊</button>
+
+<div class="sun"></div>
+
+<!-- 🪁 Kites -->
+<img src="https://i.imgur.com/YZ6XK6H.png" class="kite k1">
+<img src="https://i.imgur.com/YZ6XK6H.png" class="kite k2">
+<img src="https://i.imgur.com/YZ6XK6H.png" class="kite k3">
+
+<div class="card">
+    <div class="dp">
+        <img src="ankku dii.jpg">
+    </div>
+
+    <h1>Happy Makar Sankranti</h1>
+    <h2>To My Dearest Sister 💛</h2>
+
+    <p class="message">
+        Happy Makar Sankranti meri pyaari behen! <br>
+        Tumhari zindagi hamesha khushiyon, success aur sukoon se bhari rahe, <br>
+        har din tumhari muskaan aur confidence aur bhi zyada chamke, <br>
+        tumhare sapne aasmaan ki patang ki tarah upar udte rahein, <br>
+        aur bhagwan tumhe hamesha safe, strong aur blessed rakhe 
+    </p>
+
+    <button class="btn" onclick="this.innerHTML='💖 Sent with Love';this.style.background='#27ae60';">
+        ✨ Send Love ✨
+    </button>
+</div>
+
+<script>
+let music=false;
+const audio=document.getElementById("bgMusic");
+
+function toggleMusic(){
+    if(!music){
+        audio.play();
+        music=true;
+    }else{
+        audio.pause();
+        music=false;
+    }
+}
+</script>
+
+</body>
+</html>
